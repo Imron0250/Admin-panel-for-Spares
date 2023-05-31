@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static  %}
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Add Deliveryman</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="needs-validation" action="" method="post" enctype="multipart/form-data" novalidate >
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom01">Name
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="name" class="form-control" id="validationCustom01"  placeholder="Enter a name.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a name.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom03">Paychek
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="paychek" class="form-control" id="validationCustom03" placeholder="Enter a  paychek.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a price.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom02">The city wich he goes <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="the_city_he_goes" class="form-control" id="validationCustom02"  placeholder="Enter a the city wich he goes.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a description.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom04">Work time <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="form-control" name="work_time" id="validationCustom04"  rows="5" placeholder="Enter a work_time" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    Please enter a kg.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-lg-8 ms-auto">
+                                            <button class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

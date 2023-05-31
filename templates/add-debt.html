@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static  %}
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Add Debt</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="needs-validation" action="" method="post" enctype="multipart/form-data" novalidate >
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom01">People_name
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="people_name" class="form-control" id="validationCustom01"  placeholder="Enter a people_name.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a people_name.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom02">A thing for collateral <span
+                                                class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="a_thing_for_collateral" class="form-control" id="validationCustom02"  placeholder="Enter a a_thing_for_collateral.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a a_thing_for_collateral.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom03">Debt price
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="debt_price" class="form-control" id="validationCustom03" placeholder="Enter a debt_price .." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a debt_price.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-lg-8 ms-auto">
+                                            <button class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

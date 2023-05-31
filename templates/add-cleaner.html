@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static  %}
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Add Cleaner</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="needs-validation" action="" method="post" enctype="multipart/form-data" novalidate >
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom03">Name
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="name" class="form-control" id="validationCustom03" placeholder="Enter a last_name .." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a name.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom02">Paychek <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="paychek" class="form-control" id="validationCustom02"  placeholder="Enter a paychek.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a paychek.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom04">Cleaning_days <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="form-control" name="cleaning_days" id="validationCustom04"  rows="5" placeholder="Enter a cleaning_days" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    Please enter a cleaning_days.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom04">Cleaning_location_id <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <label></label>
+                                                <select  name="cleaning_location" id="cleaning_location">
+                                                    {%for i in cleaning_location_id%}
+                                                        <option value="{{ i.id }}">{{i.location_name}}</option>
+                                                    {%endfor%}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-lg-8 ms-auto">
+                                            <button class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

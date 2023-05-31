@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static  %}
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Add Machine</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="needs-validation" action="" method="post" enctype="multipart/form-data" novalidate >
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom01">What_produces
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="what_produces" class="form-control" id="validationCustom01"  placeholder="Enter a what_produces.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a what_produces.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom03">Price
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="price" class="form-control" id="validationCustom03" placeholder="Enter a price .." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a price.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-lg-8 ms-auto">
+                                            <button class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

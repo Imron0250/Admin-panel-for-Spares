@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Cleaner list</h4>
+                        <h4><a href="{% url 'cleaner_list' %}">Show all Cleaner </a></h4>
+                    </div>
+                    <form class="form-inline my-2 my-lg-0">
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item">
+                                <div class="input-group search-area">
+                                    <input type="search" name="q" class="form-control" placeholder="Search here...">
+                                    <button class="input-group-text"><i class="flaticon-381-search-2"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                      </form>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-responsive-md">
+                                <thead>
+                                    <tr>
+                                        <th><strong>name</strong></th>
+                                        <th><strong>paychek</strong></th>
+                                        <th><strong>cleaning_days</strong></th>
+                                        <th><strong>cleaning_location_id</strong></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in cleaner %}
+                                    <tr>
+                                        <td>{{ i.name }}</td>
+                                        <td>{{ i.paychek }}</td>
+                                        <td>{{ i.cleaning_days }}</td>
+                                        <td>{{ i.cleaning_location_id }}</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-success light sharp" data-bs-toggle="dropdown">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="{% url 'edit_cleaner' i.id %}">Edit</a>
+                                                    <a class="dropdown-item" href="{% url 'delete_cleaner' i.id%}">Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

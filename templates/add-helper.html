@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static  %}
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Add Helper</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="needs-validation" action="" method="post" enctype="multipart/form-data" novalidate >
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom01">First_name
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="first_name" class="form-control" id="validationCustom01"  placeholder="Enter a first_name.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a first_name.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom03">Last_name
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="last_name" class="form-control" id="validationCustom03" placeholder="Choose a last_name one.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a last_name.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom02">Year <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="year" class="form-control" id="validationCustom02"  placeholder="Enter a year.." required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a year.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom04">Paycheck <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="form-control" name="paycheck" id="validationCustom04"  rows="5" placeholder="Enter a paycheck" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    Please enter a paycheck.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom04">Work_time <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="form-control" name="work_time" id="validationCustom04"  rows="5" placeholder="Enter a work_time" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    Please enter a work_time.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-lg-4 col-form-label" for="validationCustom04">Work_time <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <label></label>
+                                                <select  name="task" id="task">
+                                                    {%for i in task_id%}
+                                                        <option value="{{ i.id }}">{{i.title}}</option>
+                                                    {%endfor%}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-lg-8 ms-auto">
+                                            <button class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
